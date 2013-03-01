@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-With Social Articles you can create and manage posts from your BuddyPress profile!
+With Social Articles you can create and manage posts from your BuddyPress profile.
 
 == Description ==
 
