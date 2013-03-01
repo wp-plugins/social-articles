@@ -45,6 +45,7 @@ Or Follow us on [Twitter](https://twitter.com/broobeteam)!
 2. Activate the "Social Articles" plugin through the 'Plugins' menu in WordPress
 
 == Screenshots ==
+Please visit [Social Articles's Features page](http://www.broobe.com/en/plugins/social-articles "Visit Social Articles's Features page").
 
 1. **Post creation** - Create and edit your posts.
 2. **Posts administration**.
