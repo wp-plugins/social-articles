@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: broobe_dev, mconte, nsciolini, leandrox
+Contributors: broobe_dev, mconte
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H2CYX6BVN3T3L
 Tags: buddypress, articles, frontend, posts, categories, blog, featured image, social
 Requires at least: WordPress 3.4, BuddyPress 1.5
@@ -47,10 +47,10 @@ Or Follow us on [Twitter](https://twitter.com/broobeteam)!
 
 == Screenshots ==
 
-1. **Post creation** - Create and edit your posts!
-2. **Posts administration**
-3. **BuddyPress notifications**
-4. **Plugin settings**
+1. **Post creation** - Create and edit your posts.
+2. **Posts administration**.
+3. **BuddyPress notifications**.
+4. **Plugin settings**.
 
 == Changelog ==
 = 1.0 =
