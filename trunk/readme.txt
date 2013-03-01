@@ -46,10 +46,7 @@ Or Follow us on [Twitter](https://twitter.com/broobeteam)!
 
 == Screenshots ==
 
-1. **Post creation** - Create and edit your posts.
-2. **Posts administration**.
-3. **BuddyPress notifications**.
-4. **Plugin settings**.
+1. Post creation - Administration area in your buddypress profile (access, create, edit and delete).
 
 == Changelog ==
 = 1.0 =
