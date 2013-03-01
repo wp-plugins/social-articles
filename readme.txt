@@ -8,7 +8,6 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-
 With Social Articles you can create and manage posts from your BuddyPress profile!
 
 == Description ==
@@ -38,18 +37,20 @@ Or Follow us on [Twitter](https://twitter.com/broobeteam)!
 
 
 == Installation ==
-*Install the plugin from the 'Plugins' section in your dashboard (Go to Plugins > Add New > Search and search for Social Articles).
 
-*Alternatively, you can download the plugin from the repository.
+* Install the plugin from the 'Plugins' section in your dashboard (Go to Plugins > Add New > Search and search for Social Articles).
+
+* Alternatively, you can download the plugin from the repository.
+
 1. Unzip and upload the files to the `/wp-content/plugins/social-articles/` directory
 2. Activate the "Social Articles" plugin through the 'Plugins' menu in WordPress
 
 == Screenshots ==
 
-1. Post creation.
-2. Posts administration.
-3. BuddyPress notifications
-4. Plugin settings
+1. **Post creation** - Create and edit your posts!
+2. **Posts administration**
+3. **BuddyPress notifications**
+4. **Plugin settings**
 
 == Changelog ==
 = 1.0 =
