@@ -152,3 +152,39 @@ $statusLabels = array("publish"=>__('Published', 'social-articles'),
         <span><?php echo $message; ?></span>
     </div>    
 <?php endif;?>
+
+<script>
+
+jQuery(function(){   
+    var editor = new wysihtml5.Editor("wysihtml5-editor", {
+        toolbar:     "wysihtml5-editor-toolbar",
+        stylesheets: ["http://yui.yahooapis.com/2.9.0/build/reset/reset-min.css", MyAjax.baseUrl+"/assets/css/editor.css"],
+        parserRules: wysihtml5ParserRules
+    });
+});  
+
+jQuery(function(){                    
+    new AjaxUpload('uploader', {
+        action: MyAjax.baseUrl+'/upload-handler.php',                
+                onComplete: function(file, response){                                       
+                    response = jQuery.parseJSON(response);
+                    jQuery("#uploading").hide();
+                    if(response.status == "ok"){                                                           
+                        jQuery("#image-name").val(response.value);
+                        jQuery("#image-preview-container").html(getImageObject(MyAjax.tmpImageUrl+ response.value));
+                        jQuery(".edit-controls").show();                                                    
+                    }else{
+                        jQuery(".upload-controls").show();   
+                        showError(response.value);                                
+                    }
+                },
+                onSubmit: function(file, extension){
+                   jQuery('#error-box').hide();
+                   jQuery(".upload-controls").hide();
+                   jQuery("#uploading").show();                              
+                }   
+            });         
+        
+        });             
+
+</script>

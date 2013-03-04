@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: buddypress, articles, frontend, posts, categories, blog, featured image, social
 Requires at least: WordPress 3.4, BuddyPress 1.5
 Tested up to: WordPress 3.5.1 / BuddyPress 1.6.4
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,5 +54,9 @@ Please visit [Social Articles's Features page](http://www.broobe.com/en/plugins/
 4. **Plugin settings**.
 
 == Changelog ==
+= 1.1 =
+* Script error fixed
+* Images removed from plugin directory
+
 = 1.0 =
 * Initial release
