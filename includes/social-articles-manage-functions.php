@@ -3,21 +3,18 @@
 add_action('wp_ajax_nopriv_create_post', 'create_post' );
 add_action('wp_ajax_create_post', 'create_post' );  
 function create_post(){
-    global $wpdb, $bp;
     article_manager("create", $_POST['post_id'], $_POST['post_title'], $_POST['post_content'], $_POST['category_id'], $_POST['tag_names'],  $_POST['status'], $_POST['post_image']);
 } 
 
 add_action('wp_ajax_nopriv_update_post', 'update_post' );
 add_action('wp_ajax_update_post', 'update_post' );  
 function update_post(){
-    global $wpdb, $bp;
     article_manager("update", $_POST['post_id'], $_POST['post_title'], $_POST['post_content'], $_POST['category_id'], $_POST['tag_names'],  $_POST['status'], $_POST['post_image']);
 }
 
 add_action('wp_ajax_nopriv_delete_article', 'delete_article' );
 add_action('wp_ajax_delete_article', 'delete_article' );  
 function delete_article(){
-    global $bp, $post, $wpdb;    
     if(bp_displayed_user_id()==bp_loggedin_user_id()){
        wp_delete_post($_POST['post_id']);
        echo "ok"; 
@@ -43,7 +40,7 @@ function get_more_articles(){
 add_action('wp_ajax_nopriv_deleteArticlesNotification', 'deleteArticlesNotification' );
 add_action('wp_ajax_deleteArticlesNotification', 'deleteArticlesNotification' );  
 function deleteArticlesNotification(){
-    global $wpdb, $bp;
+    global $bp;
         
     $user_id=$bp->loggedin_user->id;
     $item_id=$_POST['item_id'];
@@ -56,7 +53,7 @@ function deleteArticlesNotification(){
 
 
 function article_manager($task, $postId, $post_title, $post_content, $post_category, $post_tags, $post_status, $post_image){
-    global $wpdb, $bp;    
+    global $bp;
   
     if($post_title == ""){
         $response = array();
@@ -81,8 +78,14 @@ function article_manager($task, $postId, $post_title, $post_content, $post_categ
         
         if($postId != 0){
             /*Set category*/
-            wp_set_post_terms($postId, array($post_category), 'category');
-            
+            if(empty($post_category)){
+                $categories[] = get_option('default_category');
+            }else{
+                $categories = explode(',',$post_category);
+            }
+
+            wp_set_post_terms($postId, $categories, 'category');
+
             /*Set tags*/
             if(!empty($post_tags)){                
                 wp_set_post_terms($postId, explode(',',$post_tags), 'post_tag');
@@ -141,7 +144,7 @@ function article_manager($task, $postId, $post_title, $post_content, $post_categ
 
 
 function get_articles($offset, $status, $all = false){
-    global $bp, $post, $wpdb, $socialArticles; 
+    global $bp, $post, $socialArticles;
     if($all){
        $postPerPage = -1;
     }else{
@@ -162,7 +165,7 @@ function get_articles($offset, $status, $all = false){
         while ($articles_query->have_posts()):
             $articles_query-> the_post();
             $allCategories = array();
-            $categories = get_the_category();                         
+            $categories = get_the_category();
             for($i=0; $i < count($categories); $i++){                                                                
                 $allCategories[]='<a href="'.get_category_link( $categories[$i]->cat_ID ).'" >'.
                                     $categories[$i]->cat_name.
@@ -221,43 +224,62 @@ function get_articles($offset, $status, $all = false){
         <?php endif;          
 }
 
-function get_category_list($post_id){        
+function get_category_list($post_id){
+    global $socialArticles;
     $currentCategories = array();
     if(isset($post_id)){
-       $currentCategories =  wp_get_post_categories($post_id);        
+        $currentCategories =  wp_get_post_categories($post_id);
     }
-        
-    $categoryList = "<div class='category-list-container'>";        
+
+    if( $socialArticles->options['category_type'] == 'single'){
+        $optionType="radio";
+    }else{
+        $optionType="checkbox";
+    }
+
+    $categoryList = "<div class='category-list-container'>
+                        <div class='categories-ready'>
+                            <div class='generic-button'>
+                                <a href='#' title='".__("done", "social-articles" )."' onclick='closeCategoriesList(); return false;'>".__("done", "social-articles" )."</a>
+                            </div>
+                        </div>
+                        <div class='categories-content'>";
+
     $category_ids = get_all_category_ids();
     $categories_backList = array();
- 
-    foreach($category_ids as $cat_id) {         
-      $cat_name = get_cat_name($cat_id);
-      if(!in_array($cat_name, $categories_backList)){
-            
-        if(in_array($cat_id, $currentCategories)){
-            $checked="checked";            
-        }else{
-            $checked="";
-        }   
-        
-        $categoryList .= '<p><input onchange="selectCategory('.$cat_id.', \''.$cat_name.'\')"type="radio" name="cateories" value="'.$cat_name.'" id="'.$cat_id.'" '.$checked.'/>
+
+    foreach($category_ids as $cat_id) {
+        $cat_name = get_cat_name($cat_id);
+        if(!in_array($cat_name, $categories_backList)){
+
+            if(in_array($cat_id, $currentCategories)){
+                $checked="checked";
+            }else{
+                $checked="";
+            }
+
+            $categoryList .= '<p><input type="'.$optionType.'" name="categories" value="'.$cat_name.'" id="'.$cat_id.'" '.$checked.'/>
                             <label for="'.$cat_id.'"><span></span>'.$cat_name.'</label>';
-      }                     
-    }    
-    $categoryList .= "</div>";  
-    return $categoryList;   
+        }
+    }
+    $categoryList .= "</div></div>";
+    return $categoryList;
 }
+
+
 
 function get_tags_list($post_id){            
     $currentTags = array();
     if(isset($post_id)){
        $currentTags =  wp_get_post_tags($post_id, array( 'fields' => 'ids' ));        
     }        
-    $tagsList = "<div class='tags-list-container'><div class='tags-ready'>
-                    <div class='generic-button'>
+    $tagsList = "<div class='tags-list-container'>
+                    <div class='tags-ready'>
+                        <div class='generic-button'>
                             <a href='#' title='".__("done", "social-articles" )."' onclick='closeTagsList(); return false;'>".__("done", "social-articles" )."</a>
-                    </div></div> <div class='tags-content'>";        
+                        </div>
+                        </div> <div class='tags-content'>";
+
     $tags = get_terms('post_tag', 'hide_empty=0');
 
     foreach ( $tags as $key => $tag ) { 

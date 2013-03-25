@@ -35,6 +35,10 @@
 }
 
 
+.social-articles-content #articles-dir-list{
+    float:left !important;
+}
+
 .get-started {
   margin: 20px 0;
   color: #666;
@@ -98,8 +102,7 @@
 [data-wysihtml5-action]::after,
 .fore-color::after {
   content: "";
-  background-image: url(../images/spr_toolbar_icons_r1.png);
-  background-repeat: no-repeat;
+  background: url(../images/spr_toolbar_icons_r1.png) no-repeat;
   position: absolute;
   left: 0;
   right: 0;
@@ -252,7 +255,6 @@
 [data-wysihtml5-dialog] {
   color: #333;
   font-size: 14px;
-  text-align: left;
   border-radius: 4px;
   -ms-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -260,9 +262,9 @@
   box-sizing: border-box;
   border: 1px solid #ccc;
   padding: 5px 10px;
-  background: #FFFBE0;
+  background: #F7F7F7;
   position: absolute;
-  width: 810px;
+  width: 100%;
   text-align: center;
   top: 45px;
 }
@@ -294,19 +296,18 @@
 }
 
 #wysihtml5-editor-toolbar .section {
-  width: 100%;
+  width: 100% !important;
   margin-top: 30px;
   float:left;
 }
 
 .textarea-container{
-	width: 100%;
+	width: 100% !important;
 	margin: 0 auto;
 }
 
 #wysihtml5-editor{  
-  width: 100%;
-  background: transparent;
+  width: 100% !important;
   height: 300px;
   border: 0; 
   resize: none;
@@ -319,7 +320,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3) !important;
   background: rgba(255, 255, 255, 0.4);
   outline: 0;
 }
@@ -355,19 +356,19 @@ a.fork {
 }
 
 .title-input{
-	width: 100%;
+	width: 99% !important;
 	margin-bottom: 20px !important;
-	height: 27px;
+	height: 27px !important;
 	background: white !important;
 	border-radius: 4px !important;
-	box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
-	border: none;
-	padding-left: 5px;
-	font-size: 14px;
-	font-weight: bold;
-	color: #525252;
+	box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3) !important;;
+	border: none !important;
+    padding-right: 0 !important;
+	padding-left: 1% !important;
+	font-size: 14px !important;
+	font-weight: bold !important;
+	color: #525252 !important;
 }
-
 
 .post-image-container{
 	width: 100%;
@@ -382,21 +383,22 @@ a.fork {
 }
 
 .editor-container{	
-	float: left
+	float: left;
 	width: 100%;
+    position: relative;
 }
 
 .upload-controls, .uploading{
-	margin:0 auto;
-	text-align:center;
-	width:300px;	
-	margin-top: 70px
+    text-align:center;
+	width:300px;
+    margin: 70px auto 0;
 }
 
 
 .upload-controls input{	
 	margin-bottom: 10px;
 }
+
 .upload-controls label, .uploading label, .messages-container label{
 	display: block;
 	padding-top: 2px;
@@ -404,8 +406,6 @@ a.fork {
 	padding-bottom: 2px;
 	border-radius: 4px;
 	font: italic 11px "Droid Serif", Georgia, "Times New Roman", Times, serif;
-	
-	/*sacarlo al hacerlo plugin*/
 }
 
 .image-preview-container{
@@ -416,8 +416,6 @@ a.fork {
 #image-container{
 	max-width:100%;		
 }
-
-
 
 .options{	
 	float:left;
@@ -436,18 +434,17 @@ a.fork {
 .options-content-second{
 	margin-left:5%;
 }
-.options-content .titlelabel{	
-	color: white;
-	background: #424242;
-	margin-bottom: 2px;
-	padding-left: 5px;
-	padding-right: 10px;
-	font-size: 11px;
-	font-weight: bold;
-	padding-top: 3px;
-	padding-bottom: 2px;
-	float: left;
-	height: 13px;
+.options-content .titlelabel{
+    color: white;
+    background: #424242;
+    margin-bottom: 0px !important;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0px 10px 5px 5px !important;
+    float: left;
+    height: 13px;
+    vertical-align: middle !important;
+    line-height: 17px;
 }
 
 .post-status-container{	
@@ -468,7 +465,7 @@ a.fork {
 	height: 23px;
 	padding-top: 5px;
 	margin-top: 4px;
-	
+    line-height: 18px;
 }
 
 .category-list-container, .tags-list-container{
@@ -477,7 +474,7 @@ a.fork {
 	background: white;
 	position: absolute;
 	z-index: 10;
-	top: 24px;
+	top: 22px;
 	padding-left: 10px;
 	padding-top: 10px;
 	border-radius: 4px !important;
@@ -488,7 +485,7 @@ a.fork {
 }
 
 
-.tags-content{	
+.tags-content, .categories-content{
 	height: auto;
 	float: left;
 	width: 200px;
@@ -496,7 +493,7 @@ a.fork {
 	max-height: 400px;
 }
 
-.tags-ready{
+.tags-ready, .categories-ready{
 	float:left;
 	height:33px;
 	width:195px;
@@ -505,21 +502,14 @@ a.fork {
 
 .picker, .picker-t{
 	width: 10px;
-	height: 35px;	
-	background: url(../images/right-row.png);
-	background-position: -13px 35px;
-	position: absolute;
+	height: 35px;
+    background: url(../images/right-row.png) -13px 35px;
+    position: absolute;
 	z-index: 11;
 	left: 190px;
 	top: 20px;
 	cursor:pointer	
 }
-
-
-/*.picker:hover{
-	background-position: -13px 0px;
-}*/
-
 
 .white-picker, .white-picker-t{
 	width: 14px;
@@ -527,7 +517,7 @@ a.fork {
 	position: absolute;
 	z-index: 12;
 	left: 195px;
-	top: 24px;	
+	top: 22px;
 	cursor:pointer;
 	display:none;	
 	background:#fff;
@@ -565,9 +555,8 @@ a.fork {
 	position:absolute;
 	bottom:0;
 	left:0;
-	z-index:15;		
-	/*background: rgba(255, 255, 255, 0.95) !important;*/	
-	margin-bottom:0px;	
+	z-index:15;
+	margin-bottom:0;
 }
 
 #error-box{
@@ -636,7 +625,7 @@ a.fork {
 
 .article-data{	
 	float: left;
-	width: 65%;
+	width: 59%;
 	min-height: 105px;
 	margin-top: 5px;
 	margin-left: 10px;
@@ -650,23 +639,13 @@ a.fork {
 	margin-bottom: 0.1em !important;
 }
 
-.read-more{	
-	width: 85px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	margin-bottom: 15px;
-}
-
-.more-articles-button-container{	
-	margin:0 auto;
-	margin-top:20px;
-	width: 188px;	
+.more-articles-button-container{
+    margin: 20px auto 0;
+    width: 188px;
 }
 
 #more-articles-loader{
 	display:none;
-	
 }
 
 .myself .publish, .reference-status .publish {
@@ -718,7 +697,7 @@ a.fork {
 	min-width: 95px;
 	height: 30px;
 	padding-right: 15px;
-	width: 15%;
+	width: 21%;
 }
 
 .author-options{
@@ -741,8 +720,7 @@ a.fork {
 }
 
 .deleting{
-	background: url("../images/bp-ajax-loader.gif") no-repeat !important;
-	background-position: 5px 6px !important;
+    background: url("../images/bp-ajax-loader.gif") no-repeat 5px 6px !important;
 }
 
 
@@ -836,15 +814,15 @@ a.fork {
 	margin-top: -25px !important;
 	padding-bottom: 8px !important;
 	padding-left: 10px !important;
-	size: 11px !important;
+	font-size: 11px !important;
 	color: #4B4B4B !important;
 	text-shadow: none !important;
 }
 
 .notification a {
 	display: inline !important;
-	size: 11px !important;
+	font-size: 11px !important;
 	height: 15px !important;
-	min-width: 0px !important;
-	padding: 0px !important;
+	min-width: 0 !important;
+	padding: 0 !important;
 }

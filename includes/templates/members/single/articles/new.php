@@ -35,8 +35,10 @@ $statusLabels = array("publish"=>__('Published', 'social-articles'),
 <?php endif;?>
 
 <input type="hidden" id="image-name" value="<?php echo $image_name;?>"/>
-<input type="hidden" id="category-id"/>
+<input type="hidden" id="categories-ids"/>
+<input type="hidden" id="tag-ids"/>
 <input type="hidden" id="tag-names"/>
+<input type="hidden" id="categories-names"/>
 <input type="hidden" id="post-id" value="<?php echo $post_id;?>"/>   
 <input type="hidden" id="post-status" value="<?php echo $status;?>"/>           
 
@@ -50,7 +52,7 @@ $statusLabels = array("publish"=>__('Published', 'social-articles'),
     <div id="post-maker-container">
         <div class="options">    
             <div class="options-content">
-                <label class="titlelabel"><?php _e("Categories", "social-articles"); ?></label>
+                <span class="titlelabel"><?php _e("Categories", "social-articles"); ?></span>
                 <div class="categories-selector"><?php _e("Select your category", "social-articles"); ?></div>
                 <span class="picker" onmouseover="showCategoryList()"></span>
                 <span class="white-picker"></span>

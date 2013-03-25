@@ -7,6 +7,7 @@ function social_articles_page() {?>
         if (isset($_POST['form_submit'])) {
             $options['post_per_page']      = isset($_POST['post_per_page']) ? $_POST['post_per_page'] : '';
             $options['excerpt_length']     = isset($_POST['excerpt_length']) ? $_POST['excerpt_length'] : '';
+            $options['category_type']     = isset($_POST['category_type']) ? $_POST['category_type'] : '';
             $options['bp_notifications']   = isset($_POST['bp_notifications']) ? $_POST['bp_notifications'] : '';
 
             echo '<div class="updated fade"><p>' . __('Settings Saved', 'social-articles') . '</p></div>';
@@ -63,16 +64,33 @@ function social_articles_page() {?>
                             );
 
                             $rows[] = array(
-                                'id'      => 'bp_notifications',
-                                'label'   => __('Send buddypress notifications?','social-articles'),
-                                'content' => $socialArticles->select( 'bp_notifications', array(
-                                        'false' => 'False',
-                                        'true'  => 'True',
-                                    )
+                                'id'      => 'category_type',
+                                'label'   => __('Select category type','social-articles'),
+                                'content' => $socialArticles->select( 'category_type', array(
+                                        'single' => __('Single', 'social-articles'),
+                                        'multiple'  => __('Multiple', 'social-articles'),
+                                    ), false, "", __('Number of categories people can select', 'social-articles')
                                 ),
                             );
 
-                            $save_button = '<div class="submitbutton"><input type="submit" class="button-primary" name="submit" value="' . __( 'Update Social Articles Settings &raquo;' ) . '" /></div><br class="clear"/>';
+                            $status = "";
+                            $msg = "";
+                            if(!function_exists("friends_get_friend_user_ids")){
+                                $status="disabled";
+                                $msg=__("To use this feature, you need to activate bb Friend Connections module.", "social-articles");
+                            }
+
+                            $rows[] = array(
+                                'id'      => 'bp_notifications',
+                                'label'   => __('Send buddyPress notifications?','social-articles'),
+                                'content' => $socialArticles->select( 'bp_notifications', array(
+                                        'false' => __('False', 'social-articles'),
+                                        'true'  => __('True', 'social-articles'),
+                                    ), false, $status, $msg
+                                ),
+                            );
+
+                            $save_button = '<div class="submitbutton"><input type="submit" class="button-primary" name="submit" value="'.__('Update Social Articles Settings','social-articles'). '" /></div><br class="clear"/>';
                             $socialArticles->postbox( 'social_articles_general_options', __( 'General', 'social-articles' ), $socialArticles->form_table( $rows ) . $save_button);
                             ?>
                             <input type="hidden" name="form_submit" value="true" />
@@ -87,10 +105,10 @@ function social_articles_page() {?>
                             </div>
                             <ul>
                                 <li><span><?php _e("Mail Notifications", 'social-articles')?></span>
-                                    <small>Mail Notification sends mail to your mailboxes. When new notification arrives, Mail Notification sends a new email.</small>
+                                    <small><?php _e("Mail Notification sends mail to your mailboxes. When new notification arrives, Mail Notification sends a new email.", 'social-articles')?></small>
                                 </li>
                                 <li><span><?php _e("Html Template Customization", 'social-articles')?></span>
-                                    <small>Customize your email with HTML Template Customizations!</small>
+                                    <small><?php _e("Customize your email with HTML Template Customizations!", 'social-articles');?></small>
                                 </li>
                                 <li><span><?php _e("Category Black List", 'social-articles')?></span></li>
                                 <li><span><?php _e("Tags Black List", 'social-articles')?></span></li>
@@ -104,7 +122,7 @@ function social_articles_page() {?>
                         </div>
                         <?php $features = ob_get_contents();?>
                         <?php ob_end_clean();?>
-                        <?php $socialArticles->postbox( 'social_articles_premium_options', 'Premium Features', $features);?>
+                        <?php $socialArticles->postbox( 'social_articles_premium_options', __('Premium Features', 'social-articles'), $features);?>
                     </div>                    
                 </div>
             </div>

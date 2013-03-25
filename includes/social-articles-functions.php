@@ -35,7 +35,6 @@ function get_short_text($text, $limitwrd ) {
 }
 
 function custom_get_user_posts_count($status){
-    global $bp, $post, $wpdb;        
     $args = array();     
     $args['post_status'] = $status;
     $args['author'] = bp_displayed_user_id();
@@ -46,19 +45,17 @@ function custom_get_user_posts_count($status){
     return count($ps);
 }
 
-add_action('save_post','send_notification');
-function send_notification($id){
-    global $post, $bp, $socialArticles;     
+add_action('save_post','social_articles_send_notification');
+function social_articles_send_notification($id){
+    global $bp, $socialArticles;
     $savedPost = get_post($id);
-    if($savedPost->post_status == "publish" && $savedPost->post_type=="post" && !wp_is_post_revision($id) && $socialArticles->options['bp_notifications'] == "true"){
+    if(function_exists("friends_get_friend_user_ids") && $savedPost->post_status == "publish" && $savedPost->post_type=="post" && !wp_is_post_revision($id) && $socialArticles->options['bp_notifications'] == "true"){
         $friends = friends_get_friend_user_ids($savedPost->post_author);  
         foreach($friends as $friend):        
             bp_core_add_notification($savedPost->ID,  $friend , $bp->social_articles->id, 'new_article'.$savedPost->ID, $savedPost->post_author);         
         endforeach;
         bp_core_add_notification($savedPost->ID,  $savedPost->post_author , $bp->social_articles->id, 'new_article'.$savedPost->ID, -1);        
-    }        
-    
-     
+    }
 }
 
 function social_articles_remove_screen_notifications() {
@@ -70,13 +67,10 @@ add_action( 'xprofile_screen_display_profile', 'social_articles_remove_screen_no
 
 function social_articles_format_notifications( $action, $item_id, $secondary_item_id, $total_items, $format = 'string' ) {
 
-    global $bp;
-    
     do_action( 'social_articles_format_notifications', $action, $item_id, $secondary_item_id, $total_items, $format );
     
     $createdPost = get_post($item_id);
-   
-    $text = "";
+
     if($secondary_item_id == "-1"){
          $text = '</a> <div id="'.$action.'"class="notification">'. 
                     __("One of your articles was approved","social-articles").'<a class="ab-item" title="'.$createdPost->post_title.'"href="'.get_permalink( $item_id ).'">,'.__("check it out!", "social-articles").'

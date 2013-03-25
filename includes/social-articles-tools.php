@@ -37,9 +37,9 @@ if (!class_exists('Broobe_SA_Plugin_Admin')) {
         /**
          * Create a dropdown field
          */
-        function select($id, $options, $multiple = false) {
+        function select($id, $options, $multiple = false, $state = "", $msg = "") {
             $opt = get_option($this->optionname);
-            $output = '<select class="select" name="'.$id.'" id="'.$id.'">';
+            $output = '<select class="select" name="'.$id.'" id="'.$id.'" '.$state.'>';
             foreach ($options as $val => $name) {
                 $sel = '';
                 if ($opt[$id] == $val)
@@ -48,7 +48,7 @@ if (!class_exists('Broobe_SA_Plugin_Admin')) {
                     $name = $val;
                 $output .= '<option value="'.$val.'"'.$sel.'>'.$name.'</option>';
             }
-            $output .= '</select>';
+            $output .= '</select><label><i>'.$msg.'</i></label>';
             return $output;
         }
         
@@ -123,7 +123,7 @@ if (!class_exists('Broobe_SA_Plugin_Admin')) {
             if (empty($hook)) {
                 $hook = $this->hook;
             }
-            $content = '<p>'.sprintf( __( 'If you\'ve found a bug in this plugin, please submit it in the <a href="%s">Yoast Bug Tracker</a> with a clear description.', 'gawp_broobe' ), 'http://yoast.com/bugs/google-analytics/').'</p>';
+            $content = "";
             $this->postbox($this->hook.'support', __('Found a bug?', 'gawp_broobe' ), $content);
         }
 

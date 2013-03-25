@@ -1,5 +1,7 @@
 function deleteArticlesNotification(action_id, item_id, adminUrl){
-    jQuery('#'+action_id).children(".social-delete").html("");    jQuery('#'+action_id ).children(".social-loader").show(); 
+    jQuery('#'+action_id).children(".social-delete").html("");
+    jQuery('#'+action_id ).children(".social-loader").show(); 
+
     jQuery.ajax({
         type: 'post',
         url: adminUrl,
@@ -35,7 +37,7 @@ function savePost(){
         postTitle = jQuery("#post_title").val();   
         postContent = jQuery("#wysihtml5-editor").val();
         postImage = jQuery("#image-name").val();
-        categoryId = jQuery("#category-id").val();    
+        categoryId = jQuery("#categories-ids").val();
         tagnames = jQuery("#tag-names").val();
         postId = jQuery("#post-id").val();         
 
@@ -65,8 +67,11 @@ function savePost(){
                                  window.open(data.editarticle, "_self");        
                              }
                             )                      
-                            jQuery("#save-message").html(data.message);         
-                            jQuery("#articles span").html(parseInt(jQuery("#articles span").html())+1);
+                            jQuery("#save-message").html(data.message);
+                            if(jQuery("#post-status").val() == "new-post"){
+                                jQuery("#articles span").html(parseInt(jQuery("#articles span").html())+1);
+                            }
+
                             jQuery(".post-save-options").show();
                             jQuery('html, body').animate({scrollTop:0}, 'slow');                                                                      
                        }else{
@@ -93,40 +98,53 @@ function cancelImage(){
 }
 
 /*category stuff*/
-function showCategoryList(){            
+function showCategoryList(){
     jQuery(".picker").hide();
     jQuery(".white-picker").show();
     jQuery(".category-list-container").fadeIn();
 }
 
-function showTagsList(){            
+function showTagsList(){
     jQuery(".picker-t").hide();
     jQuery(".white-picker-t").show();
     jQuery(".tags-list-container").fadeIn();            
 }
 
 function closeTagsList(){           
-    setTagsElements();
+    setListsElements("tags-content","tag-names", "tag-ids","tags-selector");
     jQuery(".picker-t").show();
     jQuery(".white-picker-t").hide();
     jQuery(".tags-list-container").fadeOut();                 
 }
+
+function closeCategoriesList(){
+    setListsElements("categories-content","categories-names", "categories-ids","categories-selector");
+    jQuery(".picker").show();
+    jQuery(".white-picker").hide();
+    jQuery(".category-list-container").fadeOut();
+}
         
-function setTagsElements(){
+function setListsElements(content, namesContainer, idsContainer, selector){
     jQuery(function() {                
         names = "";
         ids = "";
-        jQuery('.tags-content input[type="checkbox"]:checked').each(function() {                    
+        jQuery('.'+content +' input[type="radio"]:checked').each(function() {
             names += jQuery(this).val() + ',';                    
             ids += jQuery(this).attr('id') + ',';                   
         });
+
+        jQuery('.'+content +' input[type="checkbox"]:checked').each(function() {
+            names += jQuery(this).val() + ',';
+            ids += jQuery(this).attr('id') + ',';
+        });
         
-        jQuery("#tag-names").val(names.slice(0, -1))
+        jQuery("#"+namesContainer).val(names.slice(0, -1));
+        jQuery("#"+idsContainer).val(ids.slice(0, -1));
         names = names.slice(0, -1).substring(0, 25);
         if( names.length >= 25 ){
             names += "...";                
         }           
-        jQuery(".tags-selector").html(names)          
+        jQuery("."+selector).html(names);
     });
 }
 
@@ -139,8 +157,8 @@ function setCategoriesElements(){
             id = jQuery(this).attr('id');                 
         });
         
-        jQuery("#category-id").val(id)                       
-        jQuery(".categories-selector").html(name)    
+        jQuery("#categories-ids").val(id);
+        jQuery(".categories-selector").html(name);
     });      
 }
 
@@ -150,20 +168,14 @@ function hideCategoryList(){
     jQuery(".white-picker").hide();         
 }
 
-function selectCategory(categoryId, categoryName){            
-    jQuery(".categories-selector").html(categoryName);
-    jQuery("#category-id").val(categoryId);
-    hideCategoryList();                        
-}
-
 jQuery('.category-list-container').hover(
- function () {       
-    showCategoryList()            
- }, 
- function () {              
-    hideCategoryList();            
- }
-)   
+     function () {
+        showCategoryList()
+     },
+     function () {
+        hideCategoryList();
+     }
+);
 
 function validateFields(){
     send=true;            
@@ -178,13 +190,13 @@ jQuery('#post_title').focus(
 	 function () {       
 	     jQuery("#post_title").removeClass("error-field");           
 	 }
-)   
+);
  
 jQuery('.categories-selector').hover(
 	 function () {       
     	 jQuery(".categories-selector").removeClass("error-field");           
  	}
-)   
+);
 
 function showError(message){            
    jQuery("#error-box").html("<label>"+message+'</label>');
@@ -204,7 +216,8 @@ function setImagePreview(){
 jQuery(document).ready(function() {
     if(jQuery("#mode").val()=="edit"){
         setCategoriesElements();
-        setTagsElements();
+        setListsElements("tags-content","tag-names","tag-ids","tags-selector");
+        setListsElements("categories-content","categories-names", "categories-ids", "categories-selector");
         setImagePreview();
     }    
 });

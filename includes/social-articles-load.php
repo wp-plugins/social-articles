@@ -40,7 +40,7 @@ class Social_Articles_Component extends BP_Component {
             'root_slug'             => isset( $bp->pages->{$this->id}->slug ) ? $bp->pages->{$this->id}->slug : SA_SLUG,
             'has_directory'         => false, 
             'notification_callback' => 'social_articles_format_notifications',
-            'search_string'         => __( 'Search articles...', 'buddypress' )
+            'search_string'         => __( 'Search articles...', 'social-articles' )
         );
            
         parent::setup_globals( $globals );
