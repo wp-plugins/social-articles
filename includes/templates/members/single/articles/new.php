@@ -1,6 +1,8 @@
 <?php
 global $post, $wpdb, $bp;
 
+$directWorkflow = isDirectWorkflow();
+
 $statusLabels = array("publish"=>__('Published', 'social-articles'), 
                         "draft"=>__('Draft', 'social-articles'), 
                       "pending"=>__('Under review', 'social-articles'), 
@@ -40,7 +42,8 @@ $statusLabels = array("publish"=>__('Published', 'social-articles'),
 <input type="hidden" id="tag-names"/>
 <input type="hidden" id="categories-names"/>
 <input type="hidden" id="post-id" value="<?php echo $post_id;?>"/>   
-<input type="hidden" id="post-status" value="<?php echo $status;?>"/>           
+<input type="hidden" id="post-status" value="<?php echo $status;?>"/>
+<input type="hidden" id="direct-workflow" value="<?php echo $directWorkflow;?>"/>
 
 <?php if(!isset($_GET['article']) || $state == "ok"):?>
     <div class="post-save-options messages-container"> 
@@ -142,9 +145,13 @@ $statusLabels = array("publish"=>__('Published', 'social-articles'),
         <div id="error-box" class="messages-container">       
         </div>
         <div class="buttons-container" id="create-controls">
-            <?php if($status=="draft" || $status == "new-post"):?>
+            <?php if(($status=="draft" || $status == "new-post") && !$directWorkflow):?>
                 <input type="checkbox" id="publish-save" /><label for="publish-save"><span></span><?php _e("Save and move it under review", "social-articles"); ?></label>
             <?php endif?>
+            <?php if(($status=="draft" || $status == "new-post") && $directWorkflow):?>
+                <input type="checkbox" id="publish-save" /><label for="publish-save"><span></span><?php _e("Save and publish", "social-articles"); ?></label>
+            <?php endif?>
+
             <input type="submit" class="button save" value="<?php _e("Save", "social-articles"); ?>" onclick="savePost(); return false;" />
             <input type="submit" class="button cancel" value="<?php _e("Cancel", "social-articles"); ?>" onclick="window.open('<?php echo $bp->loggedin_user->domain.'/articles';?>', '_self')" />
         </div>  

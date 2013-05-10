@@ -8,6 +8,7 @@ function social_articles_page() {?>
             $options['post_per_page']      = isset($_POST['post_per_page']) ? $_POST['post_per_page'] : '';
             $options['excerpt_length']     = isset($_POST['excerpt_length']) ? $_POST['excerpt_length'] : '';
             $options['category_type']     = isset($_POST['category_type']) ? $_POST['category_type'] : '';
+            $options['workflow']         = isset($_POST['workflow']) ? $_POST['workflow'] : '';
             $options['bp_notifications']   = isset($_POST['bp_notifications']) ? $_POST['bp_notifications'] : '';
 
             echo '<div class="updated fade"><p>' . __('Settings Saved', 'social-articles') . '</p></div>';
@@ -73,6 +74,16 @@ function social_articles_page() {?>
                                 ),
                             );
 
+                            $rows[] = array(
+                                'id'      => 'workflow',
+                                'label'   => __('Select workflow type','social-articles'),
+                                'content' => $socialArticles->select( 'workflow', array(
+                                        'direct' => __('Direct Publish', 'social-articles'),
+                                        'approval'  => __('With Approval ', 'social-articles'),
+                                    ), false, "", ""
+                                ),
+                            );
+
                             $status = "";
                             $msg = "";
                             if(!function_exists("friends_get_friend_user_ids")){
@@ -115,7 +126,6 @@ function social_articles_page() {?>
                                 <li><span><?php _e("Post type", 'social-articles')?></span></li>
                                 <li><span><?php _e("Selection of areas to display", 'social-articles')?></span></li>
                                 <li><span><?php _e("Required Fields Definition", 'social-articles')?></span></li>
-                                <li><span><?php _e("Custom Workflow", 'social-articles')?></span></li>
                                 <li><span><?php _e("More Editor Functions", 'social-articles')?></span></li>
                                 <li><span><?php _e("Galleries", 'social-articles')?></span></li>
                             </ul>

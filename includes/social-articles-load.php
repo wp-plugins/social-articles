@@ -6,15 +6,17 @@ class Social_Articles_Component extends BP_Component {
     function __construct() {
         global $bp;
 
-        parent::start(
-            'social_articles',
-            __( 'Social Articles', 'articles' ),
-            SA_BASE_PATH
-        );
+        if(current_user_can('edit_posts')){
+            parent::start(
+                'social_articles',
+                __( 'Social Articles', 'articles' ),
+                SA_BASE_PATH
+            );
 
-        $this->includes();
+            $this->includes();
 
-        $bp->active_components[$this->id] = '1';
+            $bp->active_components[$this->id] = '1';
+        }
 
     }
 
@@ -47,6 +49,9 @@ class Social_Articles_Component extends BP_Component {
     }
 
     function setup_nav() {
+
+        $directWorkflow = isDirectWorkflow();
+
         $main_nav = array(
             'name'                => __( 'My articles', 'social-articles' ),
             'slug'                => SA_SLUG,
@@ -63,8 +68,15 @@ class Social_Articles_Component extends BP_Component {
 
         if(bp_displayed_user_id()==bp_loggedin_user_id()){
 
+            if($directWorkflow){
+                $postCount = custom_get_user_posts_count(array("publish", "draft"));
+            }else{
+                $postCount =  custom_get_user_posts_count(array("publish", "pending", "draft"));
+            }
+
+
             $sub_nav[] = array(
-                'name'            =>  sprintf( __( 'My articles <span>%d</span>', 'social-articles' ), custom_get_user_posts_count(array("publish", "pending", "draft"))),
+                'name'            =>  sprintf( __( 'My articles <span>%d</span>', 'social-articles' ), $postCount),
                 'slug'            => 'articles',
                 'parent_url'      => $social_articles_link,
                 'parent_slug'     => SA_SLUG,

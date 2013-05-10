@@ -4,8 +4,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
 function social_articles_load_template_filter( $found_template, $templates ) {
     global $bp;
 
-    if ( $bp->current_component != $bp->social_articles->slug )
+    if( !bp_sa_is_bp_default() || !bp_is_current_component( $bp->social_articles->slug )){
         return $found_template;
+    }
+
     foreach ( (array) $templates as $template ) {
         if ( file_exists( STYLESHEETPATH . '/' . $template ) )
             $filtered_templates[] = STYLESHEETPATH . '/' . $template;
@@ -19,8 +21,18 @@ add_filter( 'bp_located_template', 'social_articles_load_template_filter', 10, 2
 
 
 function social_articles_load_sub_template( $template ) {
-    if ( $located_template = apply_filters( 'bp_located_template', locate_template( $template , false ), $template ) )  
-        load_template( apply_filters( 'bp_load_template', $located_template ) );
+    if( empty( $template ) )
+        return false;
+
+    if( bp_sa_is_bp_default() ) {
+        //locate_template( array(  $template . '.php' ), true );
+        if ( $located_template = apply_filters( 'bp_located_template', locate_template( $template , false ), $template ) )
+            load_template( apply_filters( 'bp_load_template', $located_template ) );
+
+    } else {
+        bp_get_template_part( $template );
+
+    }
 }
 
 function get_short_text($text, $limitwrd ) {   
@@ -50,8 +62,8 @@ function social_articles_send_notification($id){
     global $bp, $socialArticles;
     $savedPost = get_post($id);
     if(function_exists("friends_get_friend_user_ids") && $savedPost->post_status == "publish" && $savedPost->post_type=="post" && !wp_is_post_revision($id) && $socialArticles->options['bp_notifications'] == "true"){
-        $friends = friends_get_friend_user_ids($savedPost->post_author);  
-        foreach($friends as $friend):        
+        $friends = friends_get_friend_user_ids($savedPost->post_author);
+        foreach($friends as $friend):
             bp_core_add_notification($savedPost->ID,  $friend , $bp->social_articles->id, 'new_article'.$savedPost->ID, $savedPost->post_author);         
         endforeach;
         bp_core_add_notification($savedPost->ID,  $savedPost->post_author , $bp->social_articles->id, 'new_article'.$savedPost->ID, -1);        
@@ -87,4 +99,27 @@ function social_articles_format_notifications( $action, $item_id, $secondary_ite
     }
     return $text;
 }
+
+
+function bp_sa_is_bp_default() {
+
+    if(current_theme_supports('buddypress') || in_array( 'bp-default', array( get_stylesheet(), get_template() ) )  || ( defined( 'BP_VERSION' ) && version_compare( BP_VERSION, '1.7', '<' ) ))
+        return true;
+    else {
+        $theme = wp_get_theme();
+        $theme_tags = ! empty( $theme->tags ) ? $theme->tags : array();
+        $backpat = in_array( 'buddypress', $theme_tags );
+        if($backpat)
+            return true;
+        else
+            return false; //wordpress theme
+    }
+
+}
+
+function isDirectWorkflow(){
+    global $socialArticles;
+    return $socialArticles->options['workflow'] == 'direct' ;
+}
+
 ?>

@@ -102,7 +102,7 @@ function article_manager($task, $postId, $post_title, $post_content, $post_categ
                  
             $wp_upload_dir = wp_upload_dir();        
             $filenameTemp = SA_TEMP_IMAGE_PATH.$post_image;
-            $filename = $wp_upload_dir['path'].'/'.$post_image;            
+            $filename = $wp_upload_dir['path'].'/sa_'.$post_image;
                                    
             if ($post_image != "" && $attachedImage_name != $post_image && copy($filenameTemp,$filename)) {
                 unlink($filenameTemp);
@@ -306,7 +306,11 @@ function get_user_message($status){
             break;
         
         case 'draft':
-            return __("Your article is in draft form. If you think the article is ready to be published, you can submit it for review.", "social-articles" );
+            return __("Your article is in draft form.", "social-articles" );
+            break;
+
+        case 'publish':
+            return __("Your article has been published.", "social-articles" );
             break;
     }    
 }

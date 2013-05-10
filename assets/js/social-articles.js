@@ -26,13 +26,22 @@ function savePost(){
             actionName="create_post";             
         }else{                    
             actionName="update_post";            
-        }    
+        }
+
+        currentPostStatus =  jQuery("#post-status").val();
         
-        if(jQuery('#publish-save').is(":checked") || jQuery("#post-status").val() == "publish" || jQuery("#post-status").val() == "pending"){
-            status = "pending";                   
+        if( jQuery('#publish-save').is(":checked") ||
+            currentPostStatus== "publish" ||
+            currentPostStatus== "pending"){
+            if(jQuery('#direct-workflow').val()){
+                status = "publish";
+            }else{
+                status = "pending";
+            }
         }else{
             status = "draft";
-        }     
+        }
+
                        
         postTitle = jQuery("#post_title").val();   
         postContent = jQuery("#wysihtml5-editor").val();
