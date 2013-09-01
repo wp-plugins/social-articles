@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Social Articles\n"
-"POT-Creation-Date: 2013-05-10 01:14-0300\n"
-"PO-Revision-Date: 2013-05-10 01:15-0300\n"
+"POT-Creation-Date: 2013-09-01 17:01-0300\n"
+"PO-Revision-Date: 2013-09-01 17:02-0300\n"
 "Last-Translator: broobe <dev@broobe.com>\n"
 "Language-Team: Broobe <dev@broobe.com>\n"
 "Language: en_En\n"
@@ -44,7 +44,7 @@ msgstr ""
 msgid "There is a new article by "
 msgstr ""
 
-#: includes/social-articles-load.php:12
+#: includes/social-articles-load.php:12 includes/social-articles-load.php:117
 msgid "Social Articles"
 msgstr ""
 
@@ -66,46 +66,55 @@ msgstr ""
 msgid "New article"
 msgstr ""
 
-#: includes/social-articles-manage-functions.php:61
+#: includes/social-articles-load.php:124
+#, php-format
+msgid "My Articles <span class=\"count\">%d</span>"
+msgstr ""
+
+#: includes/social-articles-load.php:131
+msgid "New Article"
+msgstr ""
+
+#: includes/social-articles-manage-functions.php:63
 msgid "Title is required"
 msgstr ""
 
-#: includes/social-articles-manage-functions.php:138
+#: includes/social-articles-manage-functions.php:140
 msgid "Error creating the article. Try again please."
 msgstr ""
 
-#: includes/social-articles-manage-functions.php:203
+#: includes/social-articles-manage-functions.php:205
 msgid "edit article"
 msgstr ""
 
-#: includes/social-articles-manage-functions.php:204
+#: includes/social-articles-manage-functions.php:206
 msgid "delete article"
 msgstr ""
 
-#: includes/social-articles-manage-functions.php:212
+#: includes/social-articles-manage-functions.php:214
 msgid "comments"
 msgstr ""
 
-#: includes/social-articles-manage-functions.php:218
+#: includes/social-articles-manage-functions.php:220
 msgid "Archived"
 msgstr ""
 
-#: includes/social-articles-manage-functions.php:243
-#: includes/social-articles-manage-functions.php:279
+#: includes/social-articles-manage-functions.php:245
+#: includes/social-articles-manage-functions.php:281
 msgid "done"
 msgstr ""
 
-#: includes/social-articles-manage-functions.php:305
+#: includes/social-articles-manage-functions.php:307
 msgid ""
 "Your article is under review. When the editors approve it you will get a "
 "notification."
 msgstr ""
 
-#: includes/social-articles-manage-functions.php:309
+#: includes/social-articles-manage-functions.php:311
 msgid "Your article is in draft form."
 msgstr ""
 
-#: includes/social-articles-manage-functions.php:313
+#: includes/social-articles-manage-functions.php:315
 msgid "Your article has been published."
 msgstr ""
 

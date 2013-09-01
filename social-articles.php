@@ -2,7 +2,7 @@
 /*
  Plugin Name: Social Articles
  Description: This is the first BuddyPress plugin that let you to create and manage posts from your profile. It supports all buddypres themes, so you don't need to be an expert to use it!
- Version: 1.3
+ Version: 1.4
  Author: Broobe
  Author URI: http://www.broobe.com
  Text Domain: social-articles
@@ -104,7 +104,11 @@ if (!class_exists('SocialArticles') && is_plugin_active( 'buddypress/bp-loader.p
             if (!wp_script_is( 'jquery', 'queue' )){
                 wp_enqueue_script( 'jquery' );
             }
-            wp_enqueue_script("myUi","http://code.jquery.com/ui/1.9.2/jquery-ui.js");
+
+            if (!wp_script_is( 'jquery-ui-core', 'queue' )){
+                wp_enqueue_script( 'jquery-ui-core' );
+            }
+
             wp_enqueue_script('ajaxupload', SA_BASE_URL . '/assets/js/ajaxupload.js', array( 'jquery' ));
             wp_enqueue_script('jquery.templates', SA_BASE_URL . '/assets/js/jquery.tmpl.min.js', array( 'jquery' ));
             wp_enqueue_script('advance', SA_BASE_URL . '/assets/js/advanced.js');

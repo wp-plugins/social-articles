@@ -6,7 +6,7 @@ class Social_Articles_Component extends BP_Component {
     function __construct() {
         global $bp;
 
-        if(current_user_can('edit_posts')){
+        if(current_user_can('edit_posts') || !bp_loggedin_user_id() ){
             parent::start(
                 'social_articles',
                 __( 'Social Articles', 'articles' ),
@@ -94,6 +94,53 @@ class Social_Articles_Component extends BP_Component {
             );
         }
         parent::setup_nav( $main_nav, $sub_nav );
+    }
+
+    function setup_admin_bar() {
+        global $bp;
+
+        $wp_admin_nav = array();
+
+        $directWorkflow = isDirectWorkflow();
+
+        if ( is_user_logged_in() ) {
+
+            if($directWorkflow){
+                $postCount = custom_get_user_posts_count(array("publish", "draft"));
+            }else{
+                $postCount =  custom_get_user_posts_count(array("publish", "pending", "draft"));
+            }
+
+
+            $user_domain = bp_is_user() ? bp_displayed_user_domain() : bp_loggedin_user_domain();
+
+
+
+
+
+            $wp_admin_nav[] = array(
+                'parent' => 'my-account-buddypress',
+                'id'     => 'my-account-social-articles',
+                'title'  => __( 'Social Articles', 'social-articles' ),
+                'href'   => trailingslashit( $user_domain.'articles' )
+            );
+
+
+            $wp_admin_nav[] = array(
+                'parent' => 'my-account-social-articles',
+                'title'  => sprintf( __( 'My Articles <span class="count">%d</span>', 'social-articles' ), $postCount ),
+                'href'   => trailingslashit( $user_domain.'articles' )
+            );
+
+
+            $wp_admin_nav[] = array(
+                'parent' => 'my-account-social-articles',
+                'title'  => sprintf( __( 'New Article', 'social-articles' )),
+                'href'   => trailingslashit( $user_domain.'articles/new' )
+            );
+        }
+
+        parent::setup_admin_bar( $wp_admin_nav );
     }
 }
 

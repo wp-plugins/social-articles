@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: buddypress, articles, frontend, posts, categories, blog, featured image, social
 Requires at least: WordPress 3.4, BuddyPress 1.6
 Tested up to: WordPress 3.5.1 / BuddyPress 1.7.1
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,8 +26,8 @@ This is the only BuddyPress plugin that let you to create posts from your profil
 * Your post will be listed in your buddyPress profile
 * Admin configuration (post per page, excerpt length, show buddyPress notifications)
 * Multiple or single category selection (whit admin settings)
-* Spanish and German (thanks @per4mance) translation
-* Buddypress 1.7 compatible
+* Spanish, German (thanks @per4mance) and Dutch (thanks Koen Van Damme) translation
+* Buddypress 1.8 compatible
 
 You can read more about features on the [Broobe website](http://www.broobe.com/plugins/social-articles/ "Social Articles: An open-source plugin to create posts from budypress profile").
 
@@ -58,6 +58,14 @@ Please visit [Social Articles's Features page](http://www.broobe.com/en/plugins/
 4. **Plugin settings**.
 
 == Changelog ==
+= 1.4 =
+* Added Social Articles access from the top admin bar
+* "My Articles" tab, visible for logged out users
+* Fixed bug with https
+* Fixed bug in delete function
+* Dutch translation (Thanks Koen Van Damme!)
+
+
 = 1.3 =
 * Buddypress 1.7 compatible. Tested with: bp default theme, wp eleven theme, wp twenty theme. Also with some premium bp themes: Salutation, Buddy and Huddle.
 * Option to publish without approval

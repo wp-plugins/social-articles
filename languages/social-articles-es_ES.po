@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: social-articles\n"
-"POT-Creation-Date: 2013-05-10 01:16-0300\n"
-"PO-Revision-Date: 2013-05-10 01:18-0300\n"
+"POT-Creation-Date: 2013-09-01 17:02-0300\n"
+"PO-Revision-Date: 2013-09-01 17:03-0300\n"
 "Last-Translator: broobe <dev@broobe.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "accede!"
 msgid "There is a new article by "
 msgstr "Hay un nuevo articulo de "
 
-#: includes/social-articles-load.php:12
+#: includes/social-articles-load.php:12 includes/social-articles-load.php:117
 msgid "Social Articles"
 msgstr "Social Articles"
 
@@ -68,36 +68,45 @@ msgstr "Mis artículos <span>%d</span>"
 msgid "New article"
 msgstr "Nuevo artículo"
 
-#: includes/social-articles-manage-functions.php:61
+#: includes/social-articles-load.php:124
+#, php-format
+msgid "My Articles <span class=\"count\">%d</span>"
+msgstr "Mis artículos <span class=\"count\">%d</span>"
+
+#: includes/social-articles-load.php:131
+msgid "New Article"
+msgstr "Nuevo artículo"
+
+#: includes/social-articles-manage-functions.php:63
 msgid "Title is required"
 msgstr "El título es obligatorio"
 
-#: includes/social-articles-manage-functions.php:138
+#: includes/social-articles-manage-functions.php:140
 msgid "Error creating the article. Try again please."
 msgstr "Error creando el artículo. Por favor, vuelva a intentarlo."
 
-#: includes/social-articles-manage-functions.php:203
+#: includes/social-articles-manage-functions.php:205
 msgid "edit article"
 msgstr "editar artículo"
 
-#: includes/social-articles-manage-functions.php:204
+#: includes/social-articles-manage-functions.php:206
 msgid "delete article"
 msgstr "borrar artículo"
 
-#: includes/social-articles-manage-functions.php:212
+#: includes/social-articles-manage-functions.php:214
 msgid "comments"
 msgstr "comentarios"
 
-#: includes/social-articles-manage-functions.php:218
+#: includes/social-articles-manage-functions.php:220
 msgid "Archived"
 msgstr "Archivado"
 
-#: includes/social-articles-manage-functions.php:243
-#: includes/social-articles-manage-functions.php:279
+#: includes/social-articles-manage-functions.php:245
+#: includes/social-articles-manage-functions.php:281
 msgid "done"
 msgstr "listo"
 
-#: includes/social-articles-manage-functions.php:305
+#: includes/social-articles-manage-functions.php:307
 msgid ""
 "Your article is under review. When the editors approve it you will get a "
 "notification."
@@ -105,11 +114,11 @@ msgstr ""
 "Tu artículo está pendiente de revisión. Cuando los editores lo aprueben, "
 "recibirás una notificación."
 
-#: includes/social-articles-manage-functions.php:309
+#: includes/social-articles-manage-functions.php:311
 msgid "Your article is in draft form."
 msgstr "Su artículo se encuentra en borrador"
 
-#: includes/social-articles-manage-functions.php:313
+#: includes/social-articles-manage-functions.php:315
 msgid "Your article has been published."
 msgstr "Su artículo ha sido publicado"
 
