@@ -15,9 +15,10 @@ function update_post(){
 add_action('wp_ajax_nopriv_delete_article', 'delete_article' );
 add_action('wp_ajax_delete_article', 'delete_article' );  
 function delete_article(){
-
+    global $socialArticles;
     $postToDelete = get_post($_POST['post_id']);
-    if(bp_loggedin_user_id()==$postToDelete->post_author){
+
+    if(bp_loggedin_user_id()==$postToDelete->post_author && ($socialArticles->options['allow_author_deletion']=="true" || $postToDelete->post_status=="draft") ){
        wp_delete_post($_POST['post_id']);
        echo "ok"; 
     }else{
@@ -202,9 +203,13 @@ function get_articles($offset, $status, $all = false){
                     <div class="article-metadata">                     
                     <?php if(bp_displayed_user_id()==bp_loggedin_user_id()):?>
                           <div class="author-options">
+                            <?php if($socialArticles->options['allow_author_adition']=="true" || $post->post_status=="draft"):?>
                             <a class="edit" title="<?php _e("edit article", "social-articles" );?>" href="<?php echo $bp->loggedin_user->domain.'articles/new?article='.$post->ID;?>"></a>
+                            <?php endif;?>
+                            <?php if($socialArticles->options['allow_author_deletion']=="true" || $post->post_status=="draft"):?>
                             <a class="delete" title="<?php _e("delete article", "social-articles" );?>" id="delete-<?php echo $post->ID; ?>" href="#" onclick="deleteArticle(<?php echo $post->ID; ?>); return false;"></a>        
-                          </div>   
+                            <?php endif;?>
+                          </div>
                     <?php endif;?>              
                         <div class="article-likes">  
                             <a href="<?php echo get_comments_link( $post->ID ); ?>">

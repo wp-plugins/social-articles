@@ -3,6 +3,8 @@
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
+
+
 /**
  * social_articles_screen()
  *
@@ -43,7 +45,7 @@ function new_article_screen() {
 	/* Add a do action here, so your component can be extended by others. */
 	do_action( 'new_article_screen' );
 	
-	bp_core_load_template( apply_filters( 'bp_sa_screen', 'members/single/articles' ) );
+	bp_core_load_template( apply_filters( 'new_article_screen', 'members/single/articles' ) );
 }
 
 
@@ -60,12 +62,13 @@ if ( class_exists( 'BP_Theme_Compat' ) ) {
         }
 
         public function is_bp_plugin() {
-            // first we reset the post
-            add_action( 'bp_template_include_reset_dummy_post_data', array( $this, 'directory_dummy_post' ) );
-            // then we filter ‘the_content’ thanks to bp_replace_the_content
-            add_filter( 'bp_replace_the_content', array( $this, 'directory_content'    ) );
 
-
+            if ( bp_is_current_component( 'articles' ) ) {
+                // first we reset the post
+                add_action( 'bp_template_include_reset_dummy_post_data', array( $this, 'directory_dummy_post' ) );
+                // then we filter ‘the_content’ thanks to bp_replace_the_content
+                add_filter( 'bp_replace_the_content', array( $this, 'directory_content'    ) );
+            }
         }
 
         public function directory_dummy_post() {
@@ -73,6 +76,7 @@ if ( class_exists( 'BP_Theme_Compat' ) ) {
         }
 
         public function directory_content() {
+            bp_buffer_template_part( 'members/single/home' );
             bp_buffer_template_part( 'members/single/articles' );
         }
     }

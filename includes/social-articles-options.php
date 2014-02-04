@@ -10,6 +10,8 @@ function social_articles_page() {?>
             $options['category_type']     = isset($_POST['category_type']) ? $_POST['category_type'] : '';
             $options['workflow']         = isset($_POST['workflow']) ? $_POST['workflow'] : '';
             $options['bp_notifications']   = isset($_POST['bp_notifications']) ? $_POST['bp_notifications'] : '';
+            $options['allow_author_adition']   = isset($_POST['allow_author_adition']) ? $_POST['allow_author_adition'] : '';
+            $options['allow_author_deletion']   = isset($_POST['allow_author_deletion']) ? $_POST['allow_author_deletion'] : '';
 
             echo '<div class="updated fade"><p>' . __('Settings Saved', 'social-articles') . '</p></div>';
 
@@ -98,6 +100,26 @@ function social_articles_page() {?>
                                         'false' => __('False', 'social-articles'),
                                         'true'  => __('True', 'social-articles'),
                                     ), false, $status, $msg
+                                ),
+                            );
+
+                            $rows[] = array(
+                                'id'      => 'allow_author_adition',
+                                'label'   => __('Can users edit their articles?','social-articles'),
+                                'content' => $socialArticles->select( 'allow_author_adition', array(
+                                        'false' => __('False', 'social-articles'),
+                                        'true'  => __('True', 'social-articles'),
+                                    ), false
+                                ),
+                            );
+
+                            $rows[] = array(
+                                'id'      => 'allow_author_deletion',
+                                'label'   => __('Can users delete their articles?','social-articles'),
+                                'content' => $socialArticles->select( 'allow_author_deletion', array(
+                                        'false' => __('False', 'social-articles'),
+                                        'true'  => __('True', 'social-articles'),
+                                    ), false
                                 ),
                             );
 

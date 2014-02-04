@@ -1,5 +1,5 @@
 <?php
-global $post, $wpdb, $bp;
+global $post, $wpdb, $bp, $socialArticles;
 
 $directWorkflow = isDirectWorkflow();
 
@@ -11,7 +11,7 @@ $statusLabels = array("publish"=>__('Published', 'social-articles'),
 <?php if(isset($_GET['article'])):    
        $myArticle = get_post($_GET['article']);
        $post_id = $_GET['article'];
-       if(isset($myArticle) && $myArticle->post_author == bp_loggedin_user_id()){
+       if(isset($myArticle) && $myArticle->post_author == bp_loggedin_user_id() && ($socialArticles->options['allow_author_adition']=="true" || $myArticle->post_status=="draft")){
            $state = "ok";           
            $title = $myArticle->post_title;
            $content = $myArticle->post_content;             

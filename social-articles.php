@@ -94,6 +94,12 @@ if (!class_exists('SocialArticles') && is_plugin_active( 'buddypress/bp-loader.p
             if (!isset($options['bp_notifications']))
                 $options['bp_notifications'] = 'true';
 
+            if (!isset($options['allow_author_adition']))
+                $options['allow_author_adition'] = 'true';
+
+            if (!isset($options['allow_author_deletion']))
+                $options['allow_author_deletion'] = 'true';
+
             update_option('social_articles_options', $options);
         }
 
