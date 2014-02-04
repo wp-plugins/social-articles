@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: buddypress, articles, frontend, posts, categories, blog, featured image, social
 Requires at least: WordPress 3.4, BuddyPress 1.8
 Tested up to: WordPress 3.8.1 / BuddyPress 1.9.1
-Stable tag: 1.5
+Stable tag: 1.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,7 +68,7 @@ Please visit [Social Articles's Features page](http://www.broobe.com/en/plugins/
 4. **Plugin settings**.
 
 == Changelog ==
-= 1.5 =
+= 1.5.1 =
 * Added support for BuddyPress 1.9.1
 * Added option to turn off the post edition
 * Added option to turn off the post deletion
