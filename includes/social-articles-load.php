@@ -22,7 +22,7 @@ class Social_Articles_Component extends BP_Component {
             'includes/social-articles-functions.php',
             'includes/social-articles-manage-functions.php',
             'includes/social-articles-notifications.php',
-        );         
+        );
         parent::includes( $includes );
     }
 

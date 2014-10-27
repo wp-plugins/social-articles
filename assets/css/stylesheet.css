@@ -165,6 +165,10 @@
   background-position: -670px center;
 }
 
+.fore-color{
+    margin-bottom: 10px !important;
+}
+
 .fore-color ul {
   display: none;
   position: absolute;
@@ -175,7 +179,8 @@
   border: 1px solid #ccc;
   border-top: 0;
   background: #fff;
-  overflow: hidden;
+    overflow: hidden;
+    padding: 2px;
 }
 
 .fore-color li {
@@ -814,4 +819,119 @@ a.fork {
 .pending-container,.draft-container{
 	display:none;
 	width: 100%;
+}
+
+
+@media (max-width: 400px) {
+
+    .bp-wrapper div.item-list-tabs#subnav ul li {
+        width: 47%;
+        border-radius: 4px;
+        border:1px solid #FFF;
+        background: #e5e5e5;
+        padding: 1%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .options-content,.post-status-container {
+        margin-top: 10px;
+        width: 51% !important;
+        margin-right: 0;
+        float:left;
+    }
+
+    .options-content-second{
+        margin-left:0;
+    }
+
+    .category-list-container, .tags-list-container{
+        z-index: 12;
+    }
+
+    .categories-selector{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow:hidden;
+    }
+
+    .tags-ready, .categories-ready{
+        float:left;
+        height:33px;
+        width:95%;
+        text-align:right;
+    }
+
+    .options{
+        height: auto;
+    }
+
+
+    .picker, .picker-t {
+        background: #FFF url(../images/right-row.png) -11px 33px;
+        height: 25px;
+        margin-top: 2px;
+        width: 17px;
+        border-radius: 5px;
+    }
+
+    [data-wysihtml5-command], [data-wysihtml5-action]{
+        width: 30px;
+    }
+
+    .fore-color{
+        width: 50px;
+    }
+
+    [data-wysihtml5-command="bold"]::after {
+        background-position: 8px center;
+    }
+
+    [data-wysihtml5-command="italic"]::after {
+        background-position: -65px center;
+    }
+
+    [data-wysihtml5-command="insertUnorderedList"]::after {
+        background-position: -135px center;
+    }
+
+    [data-wysihtml5-command="insertOrderedList"]::after {
+        background-position: -217px center;
+    }
+
+    [data-wysihtml5-command="formatBlock"][data-wysihtml5-command-value="h1"]::after {
+        background-position: -364px center;
+    }
+
+    [data-wysihtml5-command="formatBlock"][data-wysihtml5-command-value="h2"]::after {
+        background-position: -448px center;
+    }
+
+    [data-wysihtml5-command="createLink"]::after {
+        background-position: -291px center;
+    }
+
+    .fore-color::after {
+        background-position: -741px center;
+    }
+
+
+    .upload-controls, .uploading {
+        text-align: center;
+        width: 80%;
+        margin: 70px auto 0;
+    }
+
+    .buttons-container label{
+        margin-right: 10px;
+        width: 80%;
+        display: inline-block;
+        text-align: left;
+        margin-bottom: 30px;
+    }
+
+    .buttons-container #publish-save{
+        float: left;
+    }
+
 }
