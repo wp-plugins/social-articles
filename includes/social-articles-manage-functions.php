@@ -242,7 +242,8 @@ function get_articles($offset, $status, $all = false){
                 </div>          
             </article>                  
             <?php endwhile; ?>        
-        <?php endif;          
+        <?php endif;
+    wp_reset_query();
 }
 
 function get_category_list($post_id){

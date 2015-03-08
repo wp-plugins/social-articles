@@ -29,12 +29,14 @@ function social_articles_page() {?>
                         <?php ob_start();?>
                         <strong class="blue"><?php _e( 'Help Spread the Word!', 'social-articles' ) ?></strong>
                         <p><strong><?php _e( 'Want to help make this plugin even better? All donations are used to improve this plugin, so donate $20, $50 or $100 now!', 'social-articles' )?></strong></p>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                             <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="H2CYX6BVN3T3L">
+                            <input type="hidden" name="hosted_button_id" value="PXXBLQV92XEXL">
                             <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                             <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                         </form>
+
+
                         <p><?php _e( 'Or you could:', 'social-articles' )?></p>
                         <ul>
                             <li><a target="_blank" href="http://wordpress.org/extend/plugins/social-articles/"><?php _e( 'Rate the plugin 5★ on WordPress.org', 'social-articles' )?></a></li>

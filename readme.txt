@@ -1,18 +1,18 @@
 === Plugin Name ===
 Contributors: broobe_dev, mconte
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H2CYX6BVN3T3L
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PXXBLQV92XEXL
 Tags: buddypress, articles, frontend, posts, categories, blog, featured image, social
 Requires at least: WordPress 3.4, BuddyPress 1.8
-Tested up to: WordPress 3.9.2 / BuddyPress 2.1.1
-Stable tag: 1.7
+Tested up to: WordPress 4.1.1 / BuddyPress 2.2.1
+Stable tag: 1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 With Social Articles you can create and manage posts from your BuddyPress profile.
 
 == Description ==
-
-This is the only BuddyPress plugin that let you to create posts from your profile. It supports all buddypres themes, so you don't need to be an expert to use it!  
+With social Articles you can create posts, attach the featured image, set categories and tags, and more! Everything from your buddypress profile.
+It supports all buddypress themes, so you don't need to be an expert to use it!
 
 = FEATURES =
 * Administration area in your buddypress profile (access, create, edit and delete)
@@ -27,15 +27,16 @@ This is the only BuddyPress plugin that let you to create posts from your profil
 * Admin configuration (post per page, excerpt length, show buddyPress notifications)
 * Multiple or single category selection (whit admin settings)
 * Ability to turn on/off the edit and delete option
-* Buddypress 2.1.1 compatible
+* Buddypress 2.2.1 compatible
 * Responsive design
 
-* Languages
-** English (default)
-** Spanish
-** German (thanks @per4mance)
-** Dutch (thanks Koen Van Damme)
-** Serbo-Croatian (Thanks Borisa Djuraskovic! - http://www.webhostinghub.com)
+= LANGUAGES =
+* English (default)
+* Spanish
+* German (thanks @per4mance)
+* Dutch (thanks Koen Van Damme)
+* Serbo-Croatian (thanks Borisa Djuraskovic - http://www.webhostinghub.com)
+* Norwegian (thanks Stian Iversen)
 
 If you translate Social Articles, please send us the files (po and mo) to info@broobe.com. We will add them to the next version!
 
@@ -69,6 +70,12 @@ Please visit [Social Articles's Features page](http://www.broobe.com/en/plugins/
 4. **Plugin settings**.
 
 == Changelog ==
+
+= 1.8 =
+* Improvement in responsive design.
+* Bugfixing
+* Added support for BuddyPress 2.2.1
+* Added Norwegian translation
 
 = 1.7 =
 * Improvement in responsive design.

@@ -20,12 +20,12 @@ function savePost(){
             currentPostStatus== "publish" ||
             currentPostStatus== "pending"){
             if(jQuery('#direct-workflow').val()){
-                status = "publish";
+                article_status="publish";
             }else{
-                status = "pending";
+                article_status="pending";
             }
         }else{
-            status = "draft";
+            article_status="draft";
         }
 
                        
@@ -39,7 +39,7 @@ function savePost(){
         jQuery.ajax({
                 type: 'post',
                 url: MyAjax.ajaxurl,
-                data: { action: actionName, post_title:postTitle, post_content:postContent, post_image:postImage, category_id:categoryId, tag_names:tagnames, status:status, post_id:postId},                                                
+                data: { action: actionName, post_title:postTitle, post_content:postContent, post_image:postImage, category_id:categoryId, tag_names:tagnames, status:article_status, post_id:postId},
                 success:
                 function(response) {   
                                                                                        
@@ -51,37 +51,37 @@ function savePost(){
                              function () {       
                                  window.open(data.viewarticle, "_self");        
                              }
-                            )
+                            );
                             jQuery('#new-article').click(
                              function () {       
                                  window.open(data.newarticle, "_self");        
                              }
-                            )
+                            );
                             jQuery('#edit-article').click(
                              function () {       
                                  window.open(data.editarticle, "_self");        
                              }
-                            )                      
+                            );
                             jQuery("#save-message").html(data.message);
 
-                            if(jQuery("#post-status").val() == "new-post" && status== 'publish'){
+                            if(jQuery("#post-status").val() == "new-post" && article_status== 'publish'){
                                 jQuery("#articles span").html(parseInt(jQuery("#articles span").html())+1);
                             }
 
-                            if(jQuery("#post-status").val() == "new-post" && status== 'draft'){
+                            if(jQuery("#post-status").val() == "new-post" && article_status== 'draft'){
                                jQuery("#draft span").html(parseInt(jQuery("#draft span").html())+1);
                             }
 
-                            if(jQuery("#post-status").val() == "new-post" && status== 'pending'){
+                            if(jQuery("#post-status").val() == "new-post" && article_status== 'pending'){
                                jQuery("#under-review span").html(parseInt(jQuery("#under-review span").html())+1);
                             }
 
-                            if(jQuery("#post-status").val() == "draft" && status== 'publish'){
+                            if(jQuery("#post-status").val() == "draft" && article_status== 'publish'){
                                 jQuery("#articles span").html(parseInt(jQuery("#articles span").html())+1);
                                 jQuery("#draft span").html(parseInt(jQuery("#draft span").html())-1);
                             }
 
-                           if(jQuery("#post-status").val() == "draft" && status== 'pending'){
+                           if(jQuery("#post-status").val() == "draft" && article_status== 'pending'){
                                jQuery("#under-review span").html(parseInt(jQuery("#under-review span").html())+1);
                                jQuery("#draft span").html(parseInt(jQuery("#draft span").html())-1);
                            }

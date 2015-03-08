@@ -15,7 +15,7 @@ class Social_Articles_Component extends BP_Component {
 
     }
 
-    function includes() {
+    function includes($includes = Array()) {
        
         $includes = array(
             'includes/social-articles-screens.php',
@@ -26,7 +26,7 @@ class Social_Articles_Component extends BP_Component {
         parent::includes( $includes );
     }
 
-    function setup_globals() {
+    function setup_globals($args = array()) {
         global $bp;
         if ( !defined( 'SA_SLUG' ) )
             define( 'SA_SLUG', $this->id );
@@ -42,7 +42,7 @@ class Social_Articles_Component extends BP_Component {
         }
     }
 
-    function setup_nav() {
+    function setup_nav($main_nav = Array(), $sub_nav = Array()) {
         $directWorkflow = isDirectWorkflow();
 
         $main_nav = array(
@@ -106,10 +106,8 @@ class Social_Articles_Component extends BP_Component {
         }
     }
 
-    function setup_admin_bar() {
+    function setup_admin_bar($wp_admin_nav = Array()) {
         global $bp;
-
-        $wp_admin_nav = array();
 
         $directWorkflow = isDirectWorkflow();
 

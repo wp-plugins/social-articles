@@ -49,7 +49,7 @@ function get_short_text($text, $limitwrd ) {
 function custom_get_user_posts_count($status){
     $args = array();     
     $args['post_status'] = $status;
-    $args['author'] = bp_displayed_user_id();
+    $args['author'] = bp_loggedin_user_id();
     $args['fields'] = 'ids';
     $args['posts_per_page'] = "-1";
     $args['post_type'] = 'post';

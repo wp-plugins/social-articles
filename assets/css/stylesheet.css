@@ -142,7 +142,7 @@
 }
 
 [data-wysihtml5-command="formatBlock"][data-wysihtml5-command-value="h2"]::after {
-  background-position: -428px center;
+  background-position: -431px center;
 }
 
 [data-wysihtml5-command="createLink"]::after {

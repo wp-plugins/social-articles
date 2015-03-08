@@ -1,27 +1,29 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: social-articles\n"
-"POT-Creation-Date: 2013-09-03 23:20-0300\n"
-"PO-Revision-Date: 2014-10-27 00:48-0300\n"
-"Last-Translator: broobe <dev@broobe.com>\n"
-"Language-Team: \n"
+"Project-Id-Version: Social Articles\n"
+"POT-Creation-Date: 2013-09-03 23:19-0300\n"
+"PO-Revision-Date: 2015-03-08 00:25+0100\n"
+"Last-Translator: Stian Iversen <mail@stianiversen.com>\n"
+"Language-Team: Broobe <dev@broobe.com>\n"
+"Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.7.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: C:\\xampp1.8.2\\htdocs\\wordpress-plugins\\wordpress\\wp-"
 "content\\plugins\\social-articles\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: social-articles.php:159
 msgid "Settings"
-msgstr "Administración"
+msgstr "Innstillinger"
 
 #: social-articles.php:171
 msgid "Donate"
-msgstr "Donar"
+msgstr "Doner"
 
 #: social-articles.php:191
 msgid ""
@@ -29,373 +31,372 @@ msgid ""
 "Please <a href=\"http://buddypress.org\">install BuddyPress</a> first, or <a "
 "href=\"plugins.php\">deactivate Social Articles</a>."
 msgstr ""
-"<strong>Social Articles</strong></a> requiere el plugin BuddyPress. Por "
-"favor,  <a href=\"http://buddypress.org\">instala BuddyPress</a> primero, o "
-"<a href=\"plugins.php\">desactiva  Social Articles</a>."
+"<strong>Sosiale Artikler</strong> krever BuddyPress plugin for å fungere. "
+"Vennligst <a href=\"http://buddypress.org\">installer BuddyPress</a> først "
+"eller <a href=\"plugins.php\">deaktiver Sosiale Artikler</a>."
 
 #: includes/social-articles-functions.php:88
 msgid "One of your articles was approved"
-msgstr "Uno de tus articulos ha sido aprovado"
+msgstr "En av artiklene dine ble godkjent"
 
 #: includes/social-articles-functions.php:88
 #: includes/social-articles-functions.php:96
 msgid "check it out!"
-msgstr "accede!"
+msgstr "sjekk den!"
 
 #: includes/social-articles-functions.php:95
 msgid "There is a new article by "
-msgstr "Hay un nuevo articulo de "
+msgstr "Det er en ny artikkel av "
 
 #: includes/social-articles-load.php:12 includes/social-articles-load.php:124
 msgid "Social Articles"
-msgstr "Social Articles"
+msgstr "Sosiale Artikler"
 
 #: includes/social-articles-load.php:45
 msgid "Search articles..."
-msgstr "Buscar artículos..."
+msgstr "Søk etter artikler..."
 
 #: includes/social-articles-load.php:56
 msgid "My articles"
-msgstr "Mis artículos"
+msgstr "Mine artikler"
 
 #: includes/social-articles-load.php:79
 #, php-format
 msgid "My articles <span>%d</span>"
-msgstr "Mis artículos <span>%d</span>"
+msgstr "Mine artikler <span>%d</span>"
 
 #: includes/social-articles-load.php:88
 #: includes/templates/members/single/articles/new.php:53
 msgid "New article"
-msgstr "Nuevo artículo"
+msgstr "Ny artikkel"
 
 #: includes/social-articles-load.php:131
 #, php-format
 msgid "My Articles <span class=\"count\">%d</span>"
-msgstr "Mis artículos <span class=\"count\">%d</span>"
+msgstr "Mine Artikler <span class=\"count\">%d</span>"
 
 #: includes/social-articles-load.php:138
 msgid "New Article"
-msgstr "Nuevo artículo"
+msgstr "Ny Artikkel"
 
 #: includes/social-articles-manage-functions.php:64
 msgid "Title is required"
-msgstr "El título es obligatorio"
+msgstr "Tittel er påkrevd"
 
 #: includes/social-articles-manage-functions.php:141
 msgid "Error creating the article. Try again please."
-msgstr "Error creando el artículo. Por favor, vuelva a intentarlo."
+msgstr "Feil under oppretting av artikkel. Prøv igjen."
 
 #: includes/social-articles-manage-functions.php:207
 msgid "edit article"
-msgstr "editar artículo"
+msgstr "﻿rediger artikkel"
 
 #: includes/social-articles-manage-functions.php:210
 msgid "delete article"
-msgstr "borrar artículo"
+msgstr "slett artikkel"
 
 #: includes/social-articles-manage-functions.php:219
 msgid "comments"
-msgstr "comentarios"
+msgstr "kommentarer"
 
 #: includes/social-articles-manage-functions.php:225
 msgid "Archived"
-msgstr "Archivado"
+msgstr "Arkivert"
 
 #: includes/social-articles-manage-functions.php:250
 #: includes/social-articles-manage-functions.php:286
 msgid "done"
-msgstr "listo"
+msgstr "ferdig"
 
 #: includes/social-articles-manage-functions.php:312
 msgid ""
 "Your article is under review. When the editors approve it you will get a "
 "notification."
 msgstr ""
-"Tu artículo está pendiente de revisión. Cuando los editores lo aprueben, "
-"recibirás una notificación."
+"Artikkelen din er under vurdering. Når redaktørene godkjenner den får du et "
+"varsel."
 
 #: includes/social-articles-manage-functions.php:316
 msgid "Your article is in draft form."
-msgstr "Su artículo se encuentra en borrador"
+msgstr "Artikkelen er en kladd."
 
 #: includes/social-articles-manage-functions.php:320
 msgid "Your article has been published."
-msgstr "Su artículo ha sido publicado"
+msgstr "Artikkelen er publisert."
 
 #: includes/social-articles-options.php:16
 msgid "Settings Saved"
-msgstr "Configuración guardada"
+msgstr "Innstillinger Lagret"
 
 #: includes/social-articles-options.php:23
 msgid "Social Articles Settings"
-msgstr "Configuración de social articles"
+msgstr "Innstillinger for Sosiale Artikler"
 
 #: includes/social-articles-options.php:30
 #: includes/social-articles-options.php:46
 msgid "Help Spread the Word!"
-msgstr "Ayuda a correr la voz!"
+msgstr "Spre Ordet!"
 
 #: includes/social-articles-options.php:31
 msgid ""
 "Want to help make this plugin even better? All donations are used to improve "
 "this plugin, so donate $20, $50 or $100 now!"
 msgstr ""
-"¿Quiere ayudar a hacer este plugin aún mejor? Todas las donaciones son "
-"utilizadas para mejorar este plugin, entonces dona $ 20, $ 50 o $ 100 ahora!"
+"Vil du gjøre denne utvidelsen enda bedre? Alle doneringer blir brukt til å "
+"forbedre denne utvidelsen, så doner $20, $50 eller $100 nå!"
 
 #: includes/social-articles-options.php:38
 msgid "Or you could:"
-msgstr "O puedes:"
+msgstr "Eller du kunne:"
 
 #: includes/social-articles-options.php:40
 msgid "Rate the plugin 5★ on WordPress.org"
-msgstr "Calificar el plugin con 5★ en WordPress.org"
+msgstr "Vurder utvidelsen 5★ på WordPress.org"
 
 #: includes/social-articles-options.php:41
 msgid "Help out other users in the forums"
-msgstr "Ayudar a otros usuarios en el foro"
+msgstr "Hjelp andre brukere i forumet"
 
 #: includes/social-articles-options.php:42
 #, php-format
 msgid "Blog about it & link to the %1$splugin page%2$s"
-msgstr ""
-"Agrega una entrada en tu blog sobre nuestro plugin junto con el link "
-"%1$spágina del plugin%2$s"
+msgstr "Blogg om det & link til %1$sutvidelse siden%2$s"
 
 #: includes/social-articles-options.php:59
 msgid "Post per page#"
-msgstr "Articulos por página"
+msgstr "Innlegg per side #"
 
 #: includes/social-articles-options.php:65
 msgid "Excerpt length#"
-msgstr "Longitud del extracto#"
+msgstr "Utdragslengde#"
 
 #: includes/social-articles-options.php:71
 msgid "Select category type"
-msgstr "Seleccionar tipo de categoría"
+msgstr "Velg kategoritype"
 
 #: includes/social-articles-options.php:73
 msgid "Single"
-msgstr "Solo una"
+msgstr "Enslig"
 
 #: includes/social-articles-options.php:74
 msgid "Multiple"
-msgstr "Multiples"
+msgstr "Flere"
 
 #: includes/social-articles-options.php:75
 msgid "Number of categories people can select"
-msgstr "Cantidad de categorías que se pueden seleccionar"
+msgstr "Antall kategorier folk kan velge"
 
 #: includes/social-articles-options.php:81
 msgid "Select workflow type"
-msgstr "Seleccionar tipo de aprobación"
+msgstr "Velg arbeidsflyttypen"
 
 #: includes/social-articles-options.php:83
 msgid "Direct Publish"
-msgstr "Publicación directa"
+msgstr "Publiser Direkte"
 
 #: includes/social-articles-options.php:84
 msgid "With Approval "
-msgstr "Con aprobación previa"
+msgstr "Med Godkjenning "
 
 #: includes/social-articles-options.php:93
 msgid "To use this feature, you need to activate bb Friend Connections module."
 msgstr ""
-"Para utilizar esta caracteríastica debes habilitar el modulo Friends "
-"Connections de buddyPress"
+"Hvis du vil bruke denne funksjonen, må du aktivere bb Friend Connections "
+"modulen."
 
 #: includes/social-articles-options.php:98
 msgid "Send buddyPress notifications?"
-msgstr "Enviar notificaciones buddyPress?"
+msgstr "Send buddyPress varslinger?"
 
 #: includes/social-articles-options.php:100
 #: includes/social-articles-options.php:110
 #: includes/social-articles-options.php:120
 msgid "False"
-msgstr "No"
+msgstr "Falskt"
 
 #: includes/social-articles-options.php:101
 #: includes/social-articles-options.php:111
 #: includes/social-articles-options.php:121
 msgid "True"
-msgstr "Si"
+msgstr "Sant"
 
 #: includes/social-articles-options.php:108
 msgid "Can users edit their articles?"
-msgstr "Pueden los usuarios editar sus artículos?"
+msgstr "Kan brukere redigere sine artikler?"
 
 #: includes/social-articles-options.php:118
 msgid "Can users delete their articles?"
-msgstr "Pueden los usuarios borrar sus artículos?"
+msgstr "Kan brukere slette sine artikler?"
 
 #: includes/social-articles-options.php:126
 msgid "Update Social Articles Settings"
-msgstr "Actualizar configuración de Social Articles"
+msgstr "Oppdater Innstillingene for Sosiale Artikler"
 
 #: includes/social-articles-options.php:127
 msgid "General"
-msgstr "General"
+msgstr "Generelt"
 
 #: includes/social-articles-options.php:137
 msgid "Coming Soon!!!"
-msgstr "Proximamente!"
+msgstr "Kommer Snart!!!"
 
 #: includes/social-articles-options.php:140
 msgid "Mail Notifications"
-msgstr "Notificaciónes vía e-mail"
+msgstr "Epost-varsler"
 
 #: includes/social-articles-options.php:141
 msgid ""
 "Mail Notification sends mail to your mailboxes. When new notification "
 "arrives, Mail Notification sends a new email."
-msgstr "Notificaciones por mail cuando se publica un artículo."
+msgstr ""
+"Epost-varsler sender epost til dine innbokser. Når nye varsler ankommer, "
+"sender Epost-varsler en ny epost."
 
 #: includes/social-articles-options.php:143
 msgid "Html Template Customization"
-msgstr "Personalización de la pantilla html para el envío de mails"
+msgstr "Html Mal Tilpasning"
 
 #: includes/social-articles-options.php:144
 msgid "Customize your email with HTML Template Customizations!"
-msgstr "Personaliza las notificaciones por mail con las plantillas HTML!"
+msgstr "Tilpass din e-post med HTML Mal Tilpasninger!"
 
 #: includes/social-articles-options.php:146
 msgid "Category Black List"
-msgstr "Exclusión de categorías"
+msgstr "Kategori Svarteliste"
 
 #: includes/social-articles-options.php:147
 msgid "Tags Black List"
-msgstr "Exclusión de etiquetas"
+msgstr "Stikkord Svarteliste"
 
 #: includes/social-articles-options.php:148
 msgid "Post type"
-msgstr "Selección de custom post types"
+msgstr "Innleggstype"
 
 #: includes/social-articles-options.php:149
 msgid "Selection of areas to display"
-msgstr "Selección de areas a mostras"
+msgstr "Utvalg av områder å vise"
 
 #: includes/social-articles-options.php:150
 msgid "Required Fields Definition"
-msgstr "Definición de campos obligatorios"
+msgstr "Definisjon av Påkrevde Felt"
 
 #: includes/social-articles-options.php:151
 msgid "More Editor Functions"
-msgstr "Mas funciones en el editor"
+msgstr "Flere Redaktørfunksjoner"
 
 #: includes/social-articles-options.php:152
 msgid "Galleries"
-msgstr "Galerías"
+msgstr "Gallerier"
 
 #: includes/social-articles-options.php:157
 msgid "Premium Features"
-msgstr "Características premium"
+msgstr "Premium-funksjoner"
 
 #: includes/social-articles-tools.php:110
 msgid "Why not do any or all of the following:"
-msgstr "Por que no hacer alguna de las siguientes cosas?"
+msgstr "Hvorfor ikke gjøre noen eller alle av følgende:"
 
 #: includes/social-articles-tools.php:112
 msgid "Link to it so other folks can find out about it."
-msgstr "Enlaza nuestro plugin asi otras personas tambien pueden encontrarlo."
+msgstr "Link til den så andre folk kan finne ut om den."
 
 #: includes/social-articles-tools.php:113
 msgid "Give it a 5 star rating on WordPress.org."
-msgstr "Puntúa el plugin con 5 estrellas en Wordpress.org."
+msgstr "Gi den en femstjerners vurdering på WordPress.org."
 
 #: includes/social-articles-tools.php:114
 msgid "Let other people know that it works with your WordPress setup."
-msgstr ""
-"Hazle saber a otras personas que funcionó con tu configuración de wordpress."
+msgstr "La andre få vite at den fungerer med din WordPress-installasjon."
 
 #: includes/social-articles-tools.php:116
 msgid "Like this plugin?"
-msgstr "Te gusta esta plugin?"
+msgstr "Liker du denne utvidelsen?"
 
 #: includes/social-articles-tools.php:127
 msgid "Found a bug?"
-msgstr "Has encontrado un error?"
+msgstr "Funnet en feil?"
 
 #: includes/templates/members/single/articles/loop.php:37
 #: includes/templates/members/single/articles/new.php:6
 msgid "Published"
-msgstr "Publicado"
+msgstr "Publisert"
 
 #: includes/templates/members/single/articles/loop.php:42
 msgid "Under Review"
-msgstr "Pendiente"
+msgstr "Under Gjennomgang"
 
 #: includes/templates/members/single/articles/loop.php:46
 #: includes/templates/members/single/articles/new.php:7
 msgid "Draft"
-msgstr "Borrador"
+msgstr "Kladd"
 
 #: includes/templates/members/single/articles/loop.php:58
 msgid "Load more articles"
-msgstr "Cargar mas artículos"
+msgstr "Last inn flere artkler"
 
 #: includes/templates/members/single/articles/loop.php:77
 msgid "This user doesn't have any article."
-msgstr "Este usuario no tiene ningun artículo"
+msgstr "Denne brukeren har ingen artikkler."
 
 #: includes/templates/members/single/articles/new.php:8
 msgid "Under review"
-msgstr "Pendiente"
+msgstr "Under gjennomgang"
 
 #: includes/templates/members/single/articles/new.php:9
 msgid "New"
-msgstr "Nuevo"
+msgstr "Ny"
 
 #: includes/templates/members/single/articles/new.php:29
 msgid "You cannot perform this action"
-msgstr "No pueder realizar esta acción"
+msgstr "Du kan ikke utføre denne handlingen"
 
 #: includes/templates/members/single/articles/new.php:51
 msgid "Edit article"
-msgstr "Editar artículo"
+msgstr "﻿Rediger artikkel"
 
 #: includes/templates/members/single/articles/new.php:52
 msgid "View article"
-msgstr "Ver artículo"
+msgstr "Vis artikkel"
 
 #: includes/templates/members/single/articles/new.php:58
 msgid "Categories"
-msgstr "Categorías"
+msgstr "Kategorier"
 
 #: includes/templates/members/single/articles/new.php:59
 msgid "Select your category"
-msgstr "Selecciona tu categoría"
+msgstr "Velg din kategori"
 
 #: includes/templates/members/single/articles/new.php:65
 msgid "Tags"
-msgstr "Etiquetas"
+msgstr "Stikkord"
 
 #: includes/templates/members/single/articles/new.php:66
 msgid "Select your tags"
-msgstr "Selecciona tus etiquetas"
+msgstr "Velg dine stikkord"
 
 #: includes/templates/members/single/articles/new.php:73
 msgid "Status"
-msgstr "Estado"
+msgstr "Status"
 
 #: includes/templates/members/single/articles/new.php:78
 msgid "Article title..."
-msgstr "Título del artículo"
+msgstr "Tittel på artikkel..."
 
 #: includes/templates/members/single/articles/new.php:86
 msgid "Insert unordered list"
-msgstr "Insertar lista desordenada"
+msgstr "Sett inn uordnet liste"
 
 #: includes/templates/members/single/articles/new.php:87
 msgid "Insert ordered list"
-msgstr "Insertar lista ordenada"
+msgstr "Sett inn ordnet liste"
 
 #: includes/templates/members/single/articles/new.php:88
 msgid "Insert link"
-msgstr "Insertar link"
+msgstr "Sett inn link"
 
 #: includes/templates/members/single/articles/new.php:89
 msgid "Title"
-msgstr "Título"
+msgstr "Tittel"
 
 #: includes/templates/members/single/articles/new.php:110
 msgid "OK"
@@ -404,50 +405,40 @@ msgstr "OK"
 #: includes/templates/members/single/articles/new.php:110
 #: includes/templates/members/single/articles/new.php:156
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Avbryt"
 
 #: includes/templates/members/single/articles/new.php:116
 msgid "Article content..."
-msgstr "Contenido del artículo"
+msgstr "Innhold i artikkel..."
 
 #: includes/templates/members/single/articles/new.php:128
 msgid "Upload Image"
-msgstr "Subir imagen"
+msgstr "Last opp Bilde"
 
 #: includes/templates/members/single/articles/new.php:129
 msgid "Max size allowed is 2 MB"
-msgstr "El tamaño maximo permitido es 2 MB"
+msgstr "Maks tillatt størrelse er 2 MB"
 
 #: includes/templates/members/single/articles/new.php:133
 msgid "Uploading your image. Please wait."
-msgstr "Subiendo tu imagen. Por favor espera."
+msgstr "Laster opp bildet. Vennligst vent."
 
 #: includes/templates/members/single/articles/new.php:137
 msgid "Delete"
-msgstr "Borrar"
+msgstr "Slett"
 
 #: includes/templates/members/single/articles/new.php:143
 msgid "Saving your article. Please wait."
-msgstr "Guardando tu articulo. Por favor espera"
+msgstr "Lagrer artikkelen din. Vennligst vent."
 
 #: includes/templates/members/single/articles/new.php:149
 msgid "Save and move it under review"
-msgstr "Guardar y pasar a estado pendiente de aprobación"
+msgstr "Lagre og flytt til under gjennomgang"
 
 #: includes/templates/members/single/articles/new.php:152
 msgid "Save and publish"
-msgstr "Guargar y publicar"
+msgstr "Lagre og publiser"
 
 #: includes/templates/members/single/articles/new.php:155
 msgid "Save"
-msgstr "Guardar"
-
-#~ msgid ""
-#~ "Your article is in draft form. If you think the article is ready to be "
-#~ "published, you can submit it for review."
-#~ msgstr ""
-#~ "Tu artículo esta en borrador. Si crees que esta listo para ser publicado, "
-#~ "envíalo para su revisión."
-
-#~ msgid "Custom Workflow"
-#~ msgstr "Flujo de estados personalizado"
+msgstr "Lagre"

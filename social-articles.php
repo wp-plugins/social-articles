@@ -2,7 +2,7 @@
 /*
  Plugin Name: Social Articles
  Description: This is the first BuddyPress plugin that let you to create and manage posts from your profile. It supports all buddypres themes, so you don't need to be an expert to use it!
- Version: 1.7
+ Version: 1.8
  Author: Broobe
  Author URI: http://www.broobe.com
  Text Domain: social-articles
@@ -175,7 +175,7 @@ if (!class_exists('SocialArticles') && is_plugin_active( 'buddypress/bp-loader.p
             $plugin = plugin_basename(__FILE__);
 
             if ( $file == $plugin ) {
-                $donate_link = array('<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H2CYX6BVN3T3L">'
+                $donate_link = array('<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PXXBLQV92XEXL">'
                     . esc_html( __( 'Donate', 'social-articles' ) ) . '</a>');
 
                 $links = array_merge($links, $donate_link);
